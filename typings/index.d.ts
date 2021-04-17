@@ -35,6 +35,7 @@ declare module "discord-slash-commands-client" {
     name: string;
     description: string;
     options?: ApplicationCommandOption[];
+    default_permission?: boolean;
   }
 
   /**
