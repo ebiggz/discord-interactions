@@ -1,3 +1,3 @@
-import InteractionsClient from "./core/InteractionsClient";
+const InteractionsClient = require("./core/InteractionsClient.js");
 
 module.exports = { Client: InteractionsClient };
