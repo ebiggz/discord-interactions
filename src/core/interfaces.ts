@@ -13,14 +13,12 @@ type ApplicationCommandType = 1 | 2 | 3;
 // ApplicationCommand https://discord.com/developers/docs/interactions/slash-commands#applicationcommand
 export interface ApplicationCommand {
     id: string;
-    /** 
-     * If not provided, 1 (slash command) is assumed.
-     */
-    type?: ApplicationCommandType;
+    type: ApplicationCommandType;
     application_id: string;
     name: string;
     description: string;
     options?: ApplicationCommandOption[];
+    default_permission: boolean;
 }
 
 // ApplicationCommandOption https://discord.com/developers/docs/interactions/slash-commands#applicationcommandoption
@@ -47,6 +45,10 @@ export interface ApplicationOptions {
     description: string;
     options?: ApplicationCommandOption[];
     default_permission?: boolean;
+    /** 
+     * If not provided, 1 (slash command) is assumed.
+     */
+    type?: ApplicationCommandType;
 }
 
 /**
