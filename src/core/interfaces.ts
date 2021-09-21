@@ -8,7 +8,7 @@ export interface getCommandsOptions {
  * 2 = User (A UI-based command that shows up when you right click or tap on a user)
  * 3 = Message (A UI-based command that shows up when you right click or tap on a message)
  */
-type ApplicationCommandType = 1 | 2 | 3
+type ApplicationCommandType = 1 | 2 | 3;
 
 // ApplicationCommand https://discord.com/developers/docs/interactions/slash-commands#applicationcommand
 export interface ApplicationCommand {
