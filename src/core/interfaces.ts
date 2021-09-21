@@ -41,10 +41,12 @@ export interface ApplicationCommandOptionChoice {
     name: string;
     value: string;
 }
+
 export interface ApplicationOptions {
     name: string;
     description: string;
     options?: ApplicationCommandOption[];
+    default_permission?: boolean;
 }
 
 /**
