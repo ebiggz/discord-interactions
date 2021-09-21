@@ -7,7 +7,7 @@ import {
     GuildApplicationCommandPermissions,
 } from "./interfaces";
 
-const apiUrl = "https://discord.com/api/v8";
+const apiUrl = "https://discord.com/api/v9";
 
 export class InteractionsClient {
     private token: string;
