@@ -3,9 +3,20 @@ export interface getCommandsOptions {
     guildID?: string;
 }
 
+/**
+ * 1 = Chat Input (Slash command)
+ * 2 = User (A UI-based command that shows up when you right click or tap on a user)
+ * 3 = Message (A UI-based command that shows up when you right click or tap on a message)
+ */
+type ApplicationCommandType = 1 | 2 | 3
+
 // ApplicationCommand https://discord.com/developers/docs/interactions/slash-commands#applicationcommand
 export interface ApplicationCommand {
     id: string;
+    /** 
+     * If not provided, 1 (slash command) is assumed.
+     */
+    type?: ApplicationCommandType;
     application_id: string;
     name: string;
     description: string;
