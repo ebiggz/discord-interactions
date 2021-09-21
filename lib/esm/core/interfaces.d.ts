@@ -10,14 +10,12 @@ export interface getCommandsOptions {
 declare type ApplicationCommandType = 1 | 2 | 3;
 export interface ApplicationCommand {
     id: string;
-    /**
-     * If not provided, 1 (slash command) is assumed.
-     */
-    type?: ApplicationCommandType;
+    type: ApplicationCommandType;
     application_id: string;
     name: string;
     description: string;
     options?: ApplicationCommandOption[];
+    default_permission: boolean;
 }
 export interface ApplicationCommandOption {
     name: string;
@@ -37,6 +35,10 @@ export interface ApplicationOptions {
     description: string;
     options?: ApplicationCommandOption[];
     default_permission?: boolean;
+    /**
+     * If not provided, 1 (slash command) is assumed.
+     */
+    type?: ApplicationCommandType;
 }
 /**
  * Application command permissions allow you to enable or disable commands for specific users or roles within a guild.
