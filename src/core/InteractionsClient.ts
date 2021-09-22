@@ -61,7 +61,7 @@ export class InteractionsClient {
         if (typeof options !== "object")
             throw new Error("options must be of type object. Received: " + typeof options);
 
-        if (!options.name || !options.description)
+        if (!options.name || ((options.type == null || options.type == 1) && !options.description))
             throw new Error("options is missing name or description property!");
 
         const url = guildID
