@@ -32,7 +32,7 @@ export interface ApplicationCommandOptionChoice {
 }
 export interface ApplicationOptions {
     name: string;
-    description: string;
+    description?: string;
     options?: ApplicationCommandOption[];
     default_permission?: boolean;
     /**
