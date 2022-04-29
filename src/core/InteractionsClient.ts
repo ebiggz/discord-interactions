@@ -86,8 +86,8 @@ export class InteractionsClient {
         if (typeof commandID !== "string")
             throw new Error("commandID must be of type string. Received: " + typeof commandID);
 
-        if (!options.name || !options.description)
-            throw new Error("options is missing name or description property!");
+        if (!options.name)
+            throw new Error("options is missing name property!");
 
         if (guildID && typeof guildID !== "string")
             throw new Error(
