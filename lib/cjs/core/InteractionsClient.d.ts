@@ -9,4 +9,5 @@ export declare class InteractionsClient {
     deleteCommand(commandID: string, guildID?: string): Promise<boolean>;
     getCommandPermissions(guildID: string, commandID?: string): Promise<GuildApplicationCommandPermissions[] | GuildApplicationCommandPermissions>;
     editCommandPermissions(permissions: ApplicationCommandPermissions[], guildID: string, commandID: string): Promise<GuildApplicationCommandPermissions>;
+    showModal(interaction: any, modal: any): Promise<void>;
 }
