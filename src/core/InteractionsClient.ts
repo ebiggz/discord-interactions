@@ -86,8 +86,8 @@ export class InteractionsClient {
         if (typeof commandID !== "string")
             throw new Error("commandID must be of type string. Received: " + typeof commandID);
 
-        if (!options.name || !options.description)
-            throw new Error("options is missing name or description property!");
+        if (!options.name)
+            throw new Error("options is missing name property!");
 
         if (guildID && typeof guildID !== "string")
             throw new Error(
@@ -166,5 +166,20 @@ export class InteractionsClient {
         );
 
         return res.data;
+    }
+
+    public async showModal(interaction: any, modal: any) {
+        const url = `${apiUrl}/interactions/${interaction.id}/${interaction.token}/callback`;
+
+        await axios.post(
+            url,
+            { 
+                type: "9",
+                data: modal
+             },
+            {
+                headers: { Authorization: `Bot ${this.token}` },
+            }
+        );
     }
 }
