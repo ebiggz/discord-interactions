@@ -167,4 +167,19 @@ export class InteractionsClient {
 
         return res.data;
     }
+
+    public async showModal(interaction: any, modal: any) {
+        const url = `${apiUrl}/interactions/${interaction.id}/${interaction.token}/callback`;
+
+        await axios.post(
+            url,
+            { 
+                type: "9",
+                data: modal
+             },
+            {
+                headers: { Authorization: `Bot ${this.token}` },
+            }
+        );
+    }
 }
