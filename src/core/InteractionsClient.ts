@@ -174,7 +174,7 @@ export class InteractionsClient {
         await axios.post(
             url,
             { 
-                type: "9",
+                type: 9,
                 data: modal
              },
             {
